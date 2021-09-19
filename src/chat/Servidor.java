@@ -1,4 +1,5 @@
 package chat;
+
 import java.io.BufferedReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -10,6 +11,14 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Enumeration;
 import java.util.Vector;
+
+
+/*
+    Atividade1
+    Materia:Sistemas Distribuidos
+    Professor:Ricardo Boaventura
+    Alunos: Leonardo Borges, Igor Machado, Lucas Samuel
+ */
 
 public class Servidor extends Thread {
 
@@ -74,7 +83,6 @@ public class Servidor extends Thread {
                 return;
             }
 
-
             clientes.add(saida);
             String linha = entrada.readLine();
 
@@ -119,7 +127,7 @@ public class Servidor extends Thread {
             PrintStream chat = (PrintStream) e.nextElement();
             if (acao.equals(" saiu ")) {
                 if (chat == saida) {
-                    chat.println(meuNome + " Sauu do chat");
+                    chat.println(meuNome + " Saiu do chat");
                 }
             }
             chat.println(meuNome + acao + linha);
@@ -136,4 +144,3 @@ public class Servidor extends Thread {
     }
 
 }
-
